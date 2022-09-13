@@ -29,9 +29,10 @@ def make_house():
     for x, (ie, i) in zip('12345123451234512345123451234512345', zip('00000111112222233333444445555566666', [0, 1, 2, 3, 4, 40, 41, 42, 43, 44, 80, 81, 82, 83, 84, 120, 121, 122, 123, 124, 160, 161, 162, 163, 164])):
         i = i + 6
         y = int(ie)
-        if int(ie) == 6:
-            DISPLAYSURF.blit(pygame.image.load(dirname(__file__) + '\\texures\\overworld\\tile000', (((int(x) + 6) + 10) * 16, (8 + y) * 16)))
-        DISPLAYSURF.blit(pygame.image.load(dirname(__file__) + '\\texures\\overworld\\tile' + '0' * (3 - len(str(i))) + str(i) + '.png'), (((int(x) + 6) + 10) * 16, (8 + y) * 16))
+        if y == 6:
+            for x in range(6):
+                DISPLAYSURF.blit(pygame.image.load(dirname(__file__) + '/texures/overworld/tile000', (((int(x) + 6) + 10) * 16, (8 + y) * 16)))
+        DISPLAYSURF.blit(pygame.image.load(dirname(__file__) + '/texures/overworld/tile' + '0' * (3 - len(str(i))) + str(i) + '.png'), (((int(x) + 6) + 10) * 16, (8 + y) * 16))
         old_ie = ie
 
 g1_list = []
